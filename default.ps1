@@ -2,12 +2,20 @@
     $baseDir = Resolve-Path .\
     $config = "Debug"
     $srcDir = "$baseDir\Heartbeat\Heartbeat.sln"
+    $packagesDir = "$baseDir\Heartbeat\packages"
     $VSversion = "/p:VisualStudioVersion=14.0"
     }
 
-task -name Clean -description "Deletes all build artifacts" -action {
+task -name PackageRestore -description "Restores nuget packages" -action {
+    exec {
+            nuget.exe restore $srcDir
+        }
+}
+
+task -name Clean -depends PackageRestore -description "Deletes all build artifacts" -action {
     exec { 
             msbuild $srcDir /t:Clean $VSversion
+            remove-item $packagesDir -recurse -ErrorAction Ignore
         }
 }
 
