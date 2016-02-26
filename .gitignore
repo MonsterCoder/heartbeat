@@ -42,6 +42,9 @@ local.properties
 *.sln.docstates
 Heartbeat/packages/
 
+# Visual Studio 2015 cache/options directory
+.vs/
+
 # Build results
 
 [Dd]ebug/
