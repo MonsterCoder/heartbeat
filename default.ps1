@@ -36,4 +36,22 @@ task -name Test -depends Build -description "Run all tests" {
     }
     
 }
-task -name default -depends Clean, Build, Test -description "Cleans and Builds project"
+
+task -name Init -description "Resets the build folder for a fresh build" -action {
+    exec {
+            delete_directory $buildDir
+            create_directory $buildDir
+        }
+}
+
+task -name default -depends Init, Clean, Test -description "Cleans and Builds project"
+
+function global:create_directory($directory_name)
+{
+  mkdir $directory_name  -ErrorAction SilentlyContinue  | out-null
+}
+
+function global:delete_directory($directory_name)
+{
+  rd $directory_name -recurse -force  -ErrorAction SilentlyContinue | out-null
+}
