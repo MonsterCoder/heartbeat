@@ -1,2 +1,2 @@
 # heartbeat
-Monitor the health of software projects
+Monitor the health of software projects.
