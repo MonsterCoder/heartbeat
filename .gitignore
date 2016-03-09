@@ -6,7 +6,6 @@
 *.user
 
 # Build results
-[Bb]uild/
 [Bb]in/
 [Oo]bj/
 
@@ -18,3 +17,4 @@ UnitTestResult.xml
 
 #NuGet Packages
 packages/
+*.nupkg
