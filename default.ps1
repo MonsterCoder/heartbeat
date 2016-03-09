@@ -25,7 +25,7 @@ task -name Clean -depends PackageRestore -description "Deletes all build artifac
 
 task -name Build -description "Builds the outdated artifacts" -action {
     exec {
-            msbuild $slnFile /t:Build $VSversion
+            msbuild $slnFile /t:Build /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare=$buildDir $VSversion
         }
 }
 
