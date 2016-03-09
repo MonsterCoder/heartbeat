@@ -6,6 +6,7 @@
 *.user
 
 # Build results
+[Bb]uild/
 [Bb]in/
 [Oo]bj/
 
