@@ -8,7 +8,7 @@ namespace API.Controllers
         [Route(""),HttpGet]
         public IHttpActionResult Get()
         {
-            return Ok();
+            return Ok("Request received");
         }
     }
 }
