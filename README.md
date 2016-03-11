@@ -1,5 +1,5 @@
 # heartbeat
-Monitor the health of software projects
+Monitor the health of software projects.
 
 1. Download dependencies
 2. Clean solution
